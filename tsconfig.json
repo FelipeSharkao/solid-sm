@@ -1,0 +1,16 @@
+{
+    "include": ["./src/**/*"],
+    "exclude": ["./node_modules*"],
+    "compilerOptions": {
+        "baseUrl": ".",
+        "target": "ES6",
+        "strict": true,
+        "moduleResolution": "node",
+        "verbatimModuleSyntax": true,
+        "preserveValueImports": false,
+        "rootDir": "src",
+        "paths": {
+            "@/*": ["src/*"]
+        }
+    }
+}
