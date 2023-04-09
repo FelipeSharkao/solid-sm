@@ -2,8 +2,18 @@
     "name": "solid-sm",
     "version": "1.0.0",
     "description": "No non-sense SolidJS global state management",
-    "author": "",
+    "keywords": [
+        "solid-js",
+        "state",
+        "manager",
+        "management",
+        "redux",
+        "store"
+    ],
+    "author": "Felipe Nascimento Gomes <felipenasgomes@gmail.com>",
+    "homepage": "https://github.com/FelipeSharkao/solid-sm",
     "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
     "files": [
         "dist",
         "README.md",
