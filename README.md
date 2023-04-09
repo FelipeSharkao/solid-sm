@@ -17,7 +17,7 @@ type RootState = {
 }
 
 const createTask = (name: string) => {
-    state<TaskState>((set) => ({
+    return state<TaskState>((set) => ({
         name,
         done: false,
         complete() {
@@ -44,16 +44,16 @@ const rootState = state<RootState>((set) => ({
 
 Although Solid provides global state out of the box, dealing with nested states is complex and
 requires a lot of boilerplate. This module aims to simplify that, reducing the necessary effort to
-create idiomatic and performat designs.
+create idiomatic and performant designs.
 
 ## Usage
 
 ### Creating a new state
 
-A state is a reactive object with data and actions that can mutate that data. Having actions mixed
-with data is important because it allows consumers to handle the data without knowing how the data
-was created. To create a new state, use the `state` function. It takes a function as argument that
-returns the initial value.
+A state is a reactive object with data and actions that can mutate this data. Having actions mixed
+with data is important because it allows consumers to handle the data without having to known how
+the data was created. To create a new state, use the `state` function. It takes setup a callback
+that returns the initial value.
 
 ```typescript
 type CounterState = {
@@ -67,8 +67,8 @@ const counter = state<Counter>(() => ({
 
 ### Consuming a state inside a component
 
-Inside components, states behaves as any other reactive object.Tou can access its properties inside
-a reactive scope to subscribe that scope to changes in that property.
+Inside components, states behaves as any other reactive object. You can access its properties inside
+a reactive scope to subscribe it to changes in the property.
 
 ```typescript
 function Counter() {
@@ -78,8 +78,8 @@ function Counter() {
 
 ### Creating actions to update a state
 
-The state initial function takes as parameter a `set` function that can update the state value after
-its initialized. With it you can create actions that will allow the state to be updated by
+The state setup callback takes as parameter a `set` function that can update the state value after
+it's initialized. With it, you can create actions that will allow the state to be updated by
 consumers.
 
 ```typescript

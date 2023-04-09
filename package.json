@@ -1,6 +1,6 @@
 {
     "name": "solid-sm",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "No non-sense SolidJS global state management",
     "keywords": [
         "solid-js",
