@@ -99,6 +99,36 @@ const counter = state<Counter>((set) => ({
 }))
 ```
 
+### Using actions in reactive scopes
+
+Solid SM provides a helper function to unwarp actions from the state object. This is useful when
+using the action directly as a event handler.
+
+```tsx
+type CounterState = {
+    value: number
+    inc(): void
+}
+
+const counter = state<Counter>((set) => ({
+    value: 0,
+    inc(): {
+        set("value", (v) => v + 1)
+    }
+}))
+
+function Counter() {
+    const [inc] = useActions(counter, "inc")
+
+    return (
+        <div>
+            {counter.value}{" "}
+            <button onClick={inc}>Increment</button>
+        </div>
+    )
+}
+```
+
 ### Creating nested states
 
 Nested states are a way of updating part of a object inside a state without updating the parent

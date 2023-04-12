@@ -1,5 +1,6 @@
 export type AnyObj = Record<string, unknown>
-export type AnyFunc = (...args: unknown[]) => unknown
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type AnyFunc = (...args: any) => unknown
 
 export type SetupState<T extends AnyObj> = (set: StateSetter<T>) => T
 
